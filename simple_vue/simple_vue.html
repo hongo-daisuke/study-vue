@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex">
+        <title>vue</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- テキストの表示 -->
+            <p>{{ message }}</p>
+
+            <!-- 数値の表示 -->
+            <p>{{ count }}</p>
+
+            <!-- 辞書型の表示 -->
+            <ul>
+                <li v-for="(value, key) in user">
+                    {{ key }} : {{ value }}
+                </li>
+            </ul>
+
+            <!-- リストの表示 -->
+            <ol>
+                <li v-for="color in colors">
+                    {{ color }}
+                </li>
+            </ol>
+
+            <!-- v-bindによる属性のデータバインディング -->
+            <input type="text" v-bind:value=vbind>
+        
+            <!-- if分による制御 -->
+            <p v-if="toggle">Hello</p>
+
+            <!-- v-onによるイベント処理 -->
+            <button v-on:click="onClick">Click</button>
+            <p>{{ now }}</p>
+            
+            <!-- v-modelによる双方向のデータバインディング -->
+            <p><input type="text" v-model=vmodel></p>
+            <p><input type="text" v-model=vmodel></p>
+            <pre>{{ $data }}</pre>
+        
+            <!-- コンポーネントによるインスタンスの再利用 -->
+            <hello-component></hello-component>
+            <hello-component></hello-component>
+        </div>
+
+        <!-- バージョンを指定する場合は@以降を対象バージョンに書き換える -->
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./simple_vue.js"> </script>
+    </body>
+</html>
