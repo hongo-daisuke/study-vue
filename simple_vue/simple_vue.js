@@ -8,10 +8,10 @@ const app = Vue.createApp({
             prefecture : 'Tokyo'
         },
         colors: ['Red', 'Green', 'Blue'],
-        vbind : 'Hello Vue.js!',
+        vbind : 'Hello v-bind Vue.js!',
         toggle: true,
         now: '-',
-        vmodel: 'Hello Vue.js!'
+        vmodel: 'Hello v-model Vue.js!'
     }),
     methods: {
         onClick: function(){

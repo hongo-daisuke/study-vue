@@ -1,50 +1,82 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="robots" content="noindex">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>vue</title>
+        <link rel="stylesheet" href="./simple_vue.css">
     </head>
     <body>
         <div id="app">
             <!-- テキストの表示 -->
+            <h3>テキストの表示</h3>
             <p>{{ message }}</p>
 
+            <br>
+
             <!-- 数値の表示 -->
+            <h3>数値の表示</h3>
             <p>{{ count }}</p>
 
+            <br>
+
             <!-- 辞書型の表示 -->
+            <h3>v-forによる辞書型の表示</h3>
             <ul>
                 <li v-for="(value, key) in user">
                     {{ key }} : {{ value }}
                 </li>
             </ul>
 
+            <br>
+
             <!-- リストの表示 -->
+            <h3>v-forによるリストの表示</h3>
             <ol>
                 <li v-for="color in colors">
                     {{ color }}
                 </li>
             </ol>
 
+            <br>
+
             <!-- v-bindによる属性のデータバインディング -->
+            <h3>v-bindによる属性のデータバインディング</h3>
             <input type="text" v-bind:value=vbind>
         
+            <br><br>
+
             <!-- if分による制御 -->
+            <h3>v-ifによる制御</h3>
             <p v-if="toggle">Hello</p>
 
+            <br>
+
             <!-- v-onによるイベント処理 -->
+            <h3>v-onによるイベント処理</h3>
             <button v-on:click="onClick">Click</button>
             <p>{{ now }}</p>
+
+            <br>
             
             <!-- v-modelによる双方向のデータバインディング -->
+            <h3>v-modelによる双方向のデータバインディング</h3>
             <p><input type="text" v-model=vmodel></p>
             <p><input type="text" v-model=vmodel></p>
-            <pre>{{ $data }}</pre>
         
+            <br>
+
             <!-- コンポーネントによるインスタンスの再利用 -->
+            <h3>コンポーネントによるインスタンスの再利用</h3>
             <hello-component></hello-component>
             <hello-component></hello-component>
+
+            <br>
+
+            <!-- データオブジェクト中身確認 -->
+            <h3>データオブジェクト中身確認</h3>
+            <pre>{{ $data }}</pre>
         </div>
 
         <!-- バージョンを指定する場合は@以降を対象バージョンに書き換える -->
