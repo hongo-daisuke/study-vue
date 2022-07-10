@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vue</title>
+        <link rel="stylesheet" href="./template_syntax.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-onceディレクティブ 初回だけデータバインディングを行う-->
+            <h3>v-onceディレクティブ 初回だけデータバインディングを行う</h3>
+            <p v-once>{{ vonec }}</p>
+            <button v-on:click="clickHandler">Click</button>
+
+            <br><br>
+
+            <!-- v-preディレクティブ 要素すべての子要素のコンパイルをスキップする -->
+            <h3>v-preディレクティブ 要素すべての子要素のコンパイルをスキップする</h3>
+            <p>{{ vpre }}</p>
+            <p v-pre>{{ vpre }}</p>
+
+            <br>
+
+            <!--v-htmlディレクティブ 指定した要素のinnerHTMLを更新 -->
+            <h3>v-htmlディレクティブ プレーンなHTMLを挿入する</h3>
+            <p>{{ vhtml }}</p>
+            <p v-html="vhtml"></p>
+
+            <br>
+
+            <!-- v-cloakディレクティブ -->
+            <h3>v-cloakディレクティブ ページ描写時にコンパイル前のMustacheタグが表示されるのを防止</h3>
+            <p>{{ vcloak  }}</p>
+            <p v-cloak>{{ vcloak  }}</p>
+
+            <br>
+
+            <!-- v-textディレクティブ -->
+            <h3>v-textディレクティブ Mustacheの代わりに、ディレクティブを使用</h3>
+            <h4>Mustache</h4>
+            <p>{{ vtext  }}</p>
+
+            <h4>v-text</h4>
+            <p v-text="vtext"></p>
+
+            <br>
+
+            <!-- v-bindディレクティブ -->
+            <h3>v-bindディレクティブ 省略記法</h3>
+            <a :href="url">LINK</a>
+
+            <br>
+
+            <!-- データオブジェクト中身確認 -->
+            <h3>データオブジェクト中身確認</h3>
+            <pre>{{ $data }}</pre>
+        </div>
+
+        <!-- バージョンを指定する場合は@以降を対象バージョンに書き換える -->
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./template_syntax.js"> </script>
+    </body>
+</html>
