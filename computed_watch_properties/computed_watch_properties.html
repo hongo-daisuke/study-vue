@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vue</title>
+        <link rel="stylesheet" href="./computed_watch_properties.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- 算出プロパティ computed -->
+            <h3>computed 関数によって算出したデータを返すことが出来るプロパティ</h3>
+            <p>{{ reversedMessage  }}</p>
+
+            <br>
+
+            <!-- getterとsetterを使用する -->
+            <h3>getterとsetter</h3>
+            <p>Base Price : <input type="text" v-model="basePrice"></p>
+            <p>Tax Included Price : <input type="text" v-model="taxIncludedPrice"></p>
+
+            <br>
+
+            <h3>算出プロパティのキャッシュ動作の確認</h3>
+            <p>算出プロパティ computed</p>
+            <ol>
+                <li>{{ computedNumber }}</li>
+                <li>{{ computedNumber }}</li>
+                <li>{{ computedNumber }}</li>
+            </ol>
+
+
+            <p>メソッド methods</p>
+            <ol>
+                <li>{{ methodsNumber() }}</li>
+                <li>{{ methodsNumber() }}</li>
+                <li>{{ methodsNumber() }}</li>
+            </ol>
+
+            <br>
+
+            <!-- 監視プロパティ watch -->
+            <!-- 特定のデータまたは、算出プロパティの状態を監視して、変化があった時に登録した処理を自動的に実行できる -->
+            <!-- 検索フォームで値が変わったタイミングで自動的にAjaxを行って結果を一覧表示 -->
+            <h3>監視プロパティ watch</h3>
+            <p>{{ watchMessage }}</p>
+            <p><input type="text" v-model="watchMessage"></p>
+
+            <br>
+
+            <!-- 長さkm, mを相互変換するアプリ-->
+            <h3>長さkm, mを相互変換を行う</h3>
+            <p><input type="text" v-model="kmValue"> km</p>
+            <p><input type="text" v-model="mValue"> m</p>
+
+            <br>
+
+            <h2>算出プロパティと監視プロパティ</h2>
+            <p>どちらも実装できる場合は、基本的にシンプルに書ける算出プロパティが推奨される。</p>
+            <p>例題</p>
+            <li>ユーザーに、名字 lastName と 名前 firstNameを別々のテキスト入力欄で入力させる。</li>
+            <li>フルネームをlastName + スペース + firstNameの形式で表示する。</li>
+            <li>入力値に変化があるたびに、フルネームを更新する。</li>
+            <li>算出プロパティと監視プロでそれぞれで実装する。</li>
+
+            <h2>算出プロパティ</h2>
+            <p><input type="text" v-model="cFirstName"></p>
+            <p><input type="text" v-model="cLastName"></p>
+            <p>{{ cFullName }}</p>
+
+            <h2>監視プロパティ</h2>
+            <p><input type="text" v-model="wFirstName"></p>
+            <p><input type="text" v-model="wLastName"></p>
+            <p>{{ wfullName }}</p>
+
+            <br>
+
+            <h3>deepオプション</h3>
+            <p>ネストされたオブジェクトも監視する。</p>
+            <ul>
+                <li v-for="color in colors">
+                    {{ color.name }}
+                </li>
+            </ul>
+            <button v-on:click="onClick">change</button>
+
+
+            <br>
+
+            <!-- データオブジェクト中身確認 -->
+            <h3>データオブジェクト中身確認</h3>
+            <pre>{{ $data }}</pre>
+        </div>
+
+        <!-- バージョンを指定する場合は@以降を対象バージョンに書き換える -->
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./computed_watch_properties.js"> </script>
+    </body>
+</html>
