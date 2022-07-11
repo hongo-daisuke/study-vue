@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vue</title>
+        <link rel="stylesheet" href="./if_rendering.css">
+    </head>
+    <body>
+        <div id="app">
+            <!-- 条件付きレンダリング -->
+            <h2>v-ifとv-else</h2>
+            <li>真偽値がtrueの時、YESと画面に表示</li>
+            <li>真偽値がfalseの時、NOと画面に表示</li>
+            <p v-if="toggle">YES</p>
+            <p v-else="toggle">NO</p>
+
+            <h2>v-else-if</h2>
+            <h4>信号の色の意味を出力</h4>
+            <li>red: Stop</li>
+            <li>yellow: Caution</li>
+            <li>blue: Go</li>
+            <li>それ以外: Not red / yellow / blue</li>
+            <p v-if="color === 'red'">Stop</p>
+            <p v-else-if="color === 'yellow'">Caution</p>
+            <p v-else-if="color === 'blue'">Go</p>
+            <p v-else>Not red / yellow / blue</p>
+
+            <h2>v-show</h2>
+            <h4>要素のdisplay cssプロパティを切り替えることで、表示/非表示を切り替える</h4>
+            <li>真偽値がtrueの時、Hello Vue.js !とページに表示</li>
+            <li>真偽値がfalseの時、要素は非表示</li>
+            <p v-show="showFlg">Hello Vue.js !</p>
+            <!-- falseの場合は<p style="display: none;">Hello Vue.js !</p>このように設定されている -->
+
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./if_rendering.js"> </script>
+    </body>
+</html>
