@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vue</title>
+        <link rel="stylesheet" href="./class_style_binding.css">
+    </head>
+    <body>
+        <div id="app">
+            <h3>クラスのデータバインディング</h3>
+            <!-- { クラス名: プロパティ, クラス名: プロパティ } で複数のクラス名を設定可能 -->
+            <!-- クラス名に'-'が入る場合はシングルクォートで囲う必要がある -->
+            <!-- 通常クラスはclass=""で設定可能 -->
+            <p>Hello
+                <span class="bg-gray text-blue" v-bind:class="{ large: isLarge, 'text-danger': hasError }">Vue.js !</span>
+            </p>
+
+            <br>
+
+            <h3>配列構文によるクラスのデータバインディング</h3>
+            <p>Hello
+                <span v-bind:class="largeClass">Vue.js !</span>
+            </p>
+            <p>Hello
+                <span v-bind:class="[largeClass, dengerClass]">Vue.js !</span>
+            </p>
+
+            <br>
+
+            <h3>オブジェクトデータの利用</h3>
+            <p>Hello
+                <span v-bind:class="classObject">Vue.js !</span>
+            </p>
+
+            <br>
+
+            <h3>クラスの条件に三項演算子を使用する</h3>
+            <!-- condition ? expr1 : expr2 -->
+            <!-- conditionがTrueならexpr1, Falseならexpr2を表示 -->
+            <p>Hello
+                <span v-bind:class="largeOperator ? largeClassOperator: ''">Vue.js !</span>
+            </p>
+            <p>Hello
+                <span v-bind:class="[largeOperator ? largeClassOperator: '', dengerClassOperator]">Vue.js !</span>
+            </p>
+
+            <br>
+
+            <h3>インラインスタイルのデータバインディングを使用する</h3>
+            <!-- あまり使用しないテストなどで一時的にスタイルを追加したい場合などに設定する -->
+            <!-- インラインスタイルとは -->
+            <!-- <p style="color: red;">Hello</p>のようなタグに直接設定されているスタイル -->
+            <p>Hello
+                <span v-bind:style="{ color:color, fontSize:fontSize + 'px'}">Vue.js !</span>
+            </p>
+
+            <br>
+
+            <h3>インラインスタイルのデータバインディングにオブジェクトデータを使用する</h3>
+            <p>Hello
+                <span v-bind:style="styleObject">Vue.js !</span>
+            </p>
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./class_style_binding.js"> </script>
+    </body>
+</html>
