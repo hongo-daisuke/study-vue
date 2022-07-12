@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vue</title>
+        <link rel="stylesheet" href="./component.css">
+    </head>
+    <body>
+        <div id="app">
+            <h2>コンポーネントとは</h2>
+            <li>ページを構成するUI部品</li>
+            <li>再利用可能なVueインスタンス</li>
+
+            <h2>コンポーネントの構成</h2>
+            <li>HTMLベースのテンプレート</li>
+            <li>JavaScriptで書かれたロジック</li>
+
+            <h2>コンポーネントを使う理由</h2>
+            <li>再利用可能</li>
+            <li>メンテナンス性が高まる</li>
+
+            <h2>コンポーネント名について</h2>
+            <li>ハイフンを1つ以上含むケバブケースを利用する必要がある</li>
+
+
+            <h4>Helloと出力するコンポーネントを作成して利用</h4>
+            <h5>グローバルコンポーネント</h5>
+            <hello-component-g></hello-component-g>
+            <hello-component-g></hello-component-g>
+            <hello-component-g></hello-component-g>
+
+            <h5>ローカルコンポーネント</h5>
+            <hello-component-l></hello-component-l>
+            <hello-component-l></hello-component-l>
+            <hello-component-l></hello-component-l>
+
+
+            <li>ボタンを押すと、クリック数をカウントして表示するボタンをコンポーネントで作成</li>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+
+
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="./component.js"> </script>
+    </body>
+</html>
